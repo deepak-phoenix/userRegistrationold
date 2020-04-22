@@ -4,10 +4,24 @@
 firstName=""
 lastName=""
 mail=""
-
+phone=""
 
 
 # functions
+
+# validates phone number with country code
+validatePhone(){
+    read -p "Enter a valid phone number: " phone
+    phonePattern="^\+?[0-9]{2}[ ][0-9]{10}$"
+    if [[ $phone =~ $phonePattern ]]
+    then
+        echo "Valid phone number"
+    else
+        echo "Invalid phone number"
+        echo "Try again"
+        validatePhone
+    fi
+}
 
 # validates mail if wrong input and fun asks again for user input
 validateMail(){
@@ -42,3 +56,4 @@ validateName $firstName
 read -p "Enter last name: " lastName
 validateName $lastName
 validateMail
+validatePhone
