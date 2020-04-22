@@ -2,26 +2,26 @@
 
 # variables
 firstName=""
-
+lastName=""
 
 
 
 
 # functions
 
-# vaidates first name starts with caps alphabet and can have any number of alphabet after that
-# also used recuression here
-validateFirstName(){
-    read -p "Enter first name: " firstName
-    firstNamePattern="^[A-Z][a-z A-Z]{2}"
-    if [[ $firstName =~ $firstNamePattern ]];
+# vaidates name starts with caps alphabet and can have any number of alphabet after that
+validateName(){
+    Name=$1
+    NamePattern="^[A-Z][a-z A-Z]{2}"
+    if [[ $Name =~ $NamePattern ]];
     then
-        echo "First name is valid"
+        echo "name is valid"
     else
-        echo "First name is invalid"
-        validateFirstName
+        echo "name is invalid"
     fi
 }
 
-
-validateFirstName
+read -p "Enter first name: " firstName
+validateName $firstName
+read -p "Enter last name: " lastName
+validateName $lastName
