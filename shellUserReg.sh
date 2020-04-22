@@ -10,6 +10,7 @@ firstName=""
 # functions
 
 # vaidates first name starts with caps alphabet and can have any number of alphabet after that
+# also used recuression here
 validateFirstName(){
     read -p "Enter first name: " firstName
     firstNamePattern="^[A-Z][a-z A-Z]{2}"
