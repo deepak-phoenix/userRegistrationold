@@ -3,11 +3,27 @@
 # variables
 firstName=""
 lastName=""
-
+mail=""
 
 
 
 # functions
+
+# validates mail if wrong input and fun asks again for user input
+validateMail(){
+    read -p "Enter mail id: " mail
+    mailPattern="^[a-z A-Z][[:alnum:]]*\.?\-?\+?[a-z A-Z 0-9]*@[a-z A-Z 0-9]+\.[a-z A-Z]{2}[a-z A-Z]?\.?[a-z A-Z]*$"
+    if [[ $mail =~ $mailPattern ]]
+    then
+        echo "Valid mail"
+    else
+        echo "Invalid mail"
+        echo "Try again"
+        validateMail
+    fi
+}
+
+
 
 # vaidates name starts with caps alphabet and can have any number of alphabet after that
 validateName(){
@@ -25,3 +41,4 @@ read -p "Enter first name: " firstName
 validateName $firstName
 read -p "Enter last name: " lastName
 validateName $lastName
+validateMail
