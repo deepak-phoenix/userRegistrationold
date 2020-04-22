@@ -5,9 +5,24 @@ firstName=""
 lastName=""
 mail=""
 phone=""
+password=""
 
 
 # functions
+
+
+validatePassword(){
+    read -p "Enter a valid password: " password
+    passwordPattern="^.{8}"
+    if [[ $password =~ $passwordPattern ]]
+    then
+        echo "Valid password"
+    else
+        echo "Invalid pass"
+        echo "Try again"
+        validatePassword
+    fi
+}
 
 # validates phone number with country code
 validatePhone(){
@@ -51,9 +66,10 @@ validateName(){
     fi
 }
 
-read -p "Enter first name: " firstName
-validateName $firstName
-read -p "Enter last name: " lastName
-validateName $lastName
-validateMail
-validatePhone
+# read -p "Enter first name: " firstName
+# validateName $firstName
+# read -p "Enter last name: " lastName
+# validateName $lastName
+# validateMail
+# validatePhone
+validatePassword
