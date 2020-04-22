@@ -66,10 +66,10 @@ validateName(){
     fi
 }
 
-# read -p "Enter first name: " firstName
-# validateName $firstName
-# read -p "Enter last name: " lastName
-# validateName $lastName
-# validateMail
-# validatePhone
+read -p "Enter first name: " firstName
+validateName $firstName
+read -p "Enter last name: " lastName
+validateName $lastName
+validateMail
+validatePhone
 validatePassword
