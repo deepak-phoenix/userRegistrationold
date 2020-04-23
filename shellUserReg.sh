@@ -16,7 +16,9 @@ validatePassword(){
     passwordPatternLen="^.{8}"
     passwordPatternCaps="[A-Z]+"
     passwordPatternNum="[0-9]+"
-    if [[ $password =~ $passwordPatternLen ]] && [[ $password =~ $passwordPatternCaps ]] && [[ $password =~ $passwordPatternNum ]]
+    # add most of the special char found on my keyboard
+    passwordPatternSpecial="[@!#\$&()\-\`\.,/'\"\*~<>\?]"
+    if [[ $password =~ $passwordPatternLen ]] && [[ $password =~ $passwordPatternCaps ]] && [[ $password =~ $passwordPatternNum ]] && [[ $password =~ $passwordPatternSpecial ]]
     then
         echo "Valid password"
     else
@@ -68,10 +70,10 @@ validateName(){
     fi
 }
 
-read -p "Enter first name: " firstName
-validateName $firstName
-read -p "Enter last name: " lastName
-validateName $lastName
-validateMail
-validatePhone
+# read -p "Enter first name: " firstName
+# validateName $firstName
+# read -p "Enter last name: " lastName
+# validateName $lastName
+# validateMail
+# validatePhone
 validatePassword
