@@ -15,7 +15,8 @@ validatePassword(){
     read -p "Enter a valid password: " password
     passwordPatternLen="^.{8}"
     passwordPatternCaps="[A-Z]+"
-    if [[ $password =~ $passwordPatternLen ]] && [[ $password =~ $passwordPatternCaps ]]
+    passwordPatternNum="[0-9]+"
+    if [[ $password =~ $passwordPatternLen ]] && [[ $password =~ $passwordPatternCaps ]] && [[ $password =~ $passwordPatternNum ]]
     then
         echo "Valid password"
     else
