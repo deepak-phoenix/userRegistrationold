@@ -26,7 +26,7 @@ validatePhone(){
 # validates mail if wrong input and fun asks again for user input
 validateMail(){
     read -p "Enter mail id: " mail
-    mailPattern="^[a-z A-Z][[:alnum:]]*\.?\-?\+?[a-z A-Z 0-9]*@[a-z A-Z 0-9]+\.[a-z A-Z]{2}[a-z A-Z]?\.?[a-z A-Z]*$"
+    mailPattern="^[a-z A-Z][[:alnum:]]*\.?\-?\+?[a-z A-Z 0-9]+@[a-z A-Z 0-9]+\.[a-z A-Z]{2}[a-z A-Z]?\.?[a-z A-Z]*$"
     if [[ $mail =~ $mailPattern ]]
     then
         echo "Valid mail"
