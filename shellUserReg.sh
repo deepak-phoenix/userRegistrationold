@@ -17,7 +17,7 @@ validatePassword(){
     passwordPatternCaps="[A-Z]+"
     passwordPatternNum="[0-9]+"
     # add most of the special char found on my keyboard
-    passwordPatternSpecial="[@!#\$&()\-\`\.,/'\"\*~<>\?]"
+    passwordPatternSpecial="[@!#$&()-\`.,'\"*~<>?]"
     if [[ $password =~ $passwordPatternLen ]] && [[ $password =~ $passwordPatternCaps ]] && [[ $password =~ $passwordPatternNum ]] && [[ $password =~ $passwordPatternSpecial ]]
     then
         echo "Valid password"
@@ -70,10 +70,10 @@ validateName(){
     fi
 }
 
-# read -p "Enter first name: " firstName
-# validateName $firstName
-# read -p "Enter last name: " lastName
-# validateName $lastName
-# validateMail
-# validatePhone
+read -p "Enter first name: " firstName
+validateName $firstName
+read -p "Enter last name: " lastName
+validateName $lastName
+validateMail
+validatePhone
 validatePassword
